@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Blog - Login</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/auth.css" />
+  </head>
+  <body>
+    <div class="auth-container">
+      <div class="auth-box">
+        <h2>Welcome to Travel Blog</h2>
+        <div class="auth-tabs">
+          <button class="tab-btn active" id="loginTab">Login</button>
+          <button class="tab-btn" id="signupTab">Sign Up</button>
+        </div>
+
+        <form id="loginForm" class="auth-form">
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email" id="loginEmail" required />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input
+              type="password"
+              placeholder="Password"
+              id="loginPassword"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-user-shield"></i>
+            <select id="loginRole">
+              <option value="2">User</option>
+              <option value="1">Admin</option>
+            </select>
+          </div>
+          <button type="submit">
+            <i class="fas fa-sign-in-alt"></i> Login
+          </button>
+        </form>
+
+        <form id="signupForm" class="auth-form hidden">
+          <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input
+              type="text"
+              placeholder="Full Name"
+              id="signupName"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email" id="signupEmail" required />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input
+              type="password"
+              placeholder="Password"
+              id="signupPassword"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-image"></i>
+            <input
+              type="url"
+              placeholder="Profile Image URL"
+              id="signupImage"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-user-shield"></i>
+            <select id="signupRole">
+              <option value="2">User</option>
+              <option value="1">Admin</option>
+            </select>
+          </div>
+          <button type="submit">
+            <i class="fas fa-user-plus"></i> Sign Up
+          </button>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="js/auth.js"></script>
+  </body>
+</html>

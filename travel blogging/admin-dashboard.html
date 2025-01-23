@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - Travel Blog</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/admin-dashboard.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="brand">
+          <i class="fas fa-globe-americas"></i>
+          <span>Travel Blog Admin</span>
+        </div>
+        <nav class="nav-menu">
+          <a href="#" class="active">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="#pending">
+            <i class="fas fa-user-clock"></i>
+            <span>Pending Approvals</span>
+          </a>
+          <a href="#" onclick="window.logout()" class="logout-link">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Top Navigation -->
+        <nav class="top-nav">
+          <div class="welcome-text">
+            <h2>Welcome back, <span id="adminName">Admin</span>!</h2>
+            <p class="date">Today is <span id="currentDate"></span></p>
+          </div>
+          <div class="user-profile">
+            <img
+              id="adminProfileImg"
+              src="images/default-avatar.png"
+              alt="Admin Profile"
+            />
+          </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+          <div class="hero-content">
+            <h1>Travel Blog Administration</h1>
+            <p>Manage your travel community and content from one place</p>
+          </div>
+        </section>
+
+        <!-- Stats Grid -->
+        <section class="stats-section">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="stat-details">
+                <h3>Total Users</h3>
+                <p id="totalUsers">0</p>
+                <small>Active members in your community</small>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-pen-fancy"></i>
+              </div>
+              <div class="stat-details">
+                <h3>Total Bloggers</h3>
+                <p id="totalBloggers">0</p>
+                <small>Content creators on your platform</small>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-book-open"></i>
+              </div>
+              <div class="stat-details">
+                <h3>Total Blogs</h3>
+                <p id="totalBlogs">0</p>
+                <small>Published travel stories</small>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Pending Approvals Section -->
+        <section id="pending" class="pending-section">
+          <div class="section-header">
+            <h2><i class="fas fa-user-clock"></i> Pending Blogger Approvals</h2>
+            <p>Review and manage blogger applications</p>
+          </div>
+          <div id="pendingList" class="user-grid">
+            <!-- Pending users will be displayed here -->
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="js/admin.js"></script>
+    <script>
+      const options = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      };
+      document.getElementById("currentDate").textContent =
+        new Date().toLocaleDateString("en-US", options);
+    </script>
+  </body>
+</html>

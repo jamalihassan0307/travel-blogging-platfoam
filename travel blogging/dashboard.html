@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Travel Blog</div>
+        <div class="nav-items">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search blogs...">
+                <select id="sortSelect">
+                    <option value="latest">Latest</option>
+                    <option value="oldest">Oldest</option>
+                    <option value="mostLiked">Most Liked</option>
+                </select>
+            </div>
+            <div class="user-info">
+                <img id="userProfileImg" src="images/default-avatar.png" alt="User">
+                <span id="userName">User</span>
+                <button onclick="logout()" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <div id="bloggerActions" class="action-group hidden">
+                <h3>Blogger Actions</h3>
+                <button onclick="showCreateBlogModal()" class="action-btn" 
+                        title="Create a new blog post"
+                        id="createBlogBtn">
+                    <i class="fas fa-plus"></i> Create Blog
+                </button>
+            </div>
+            <div id="userActions" class="action-group">
+                <h3>User Actions</h3>
+                <button onclick="showPaymentModal()" class="action-btn"
+                        title="Apply to become a blogger">
+                    <i class="fas fa-crown"></i> Become a Blogger
+                </button>
+            </div>
+        </div>
+
+        <main class="content">
+            <div id="blogList" class="blog-grid">
+                <!-- Blogs will be loaded here -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Create Blog Modal -->
+    <div id="createBlogModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('createBlogModal')">&times;</span>
+            <h2>Create New Blog</h2>
+            <form id="blogForm">
+                <div class="form-group">
+                    <label for="blogTitle">Title</label>
+                    <input type="text" id="blogTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="blogImage">Image URL</label>
+                    <input type="url" id="blogImage" required>
+                </div>
+                <div class="form-group">
+                    <label for="blogDescription">Description</label>
+                    <textarea id="blogDescription" required></textarea>
+                </div>
+                <button type="submit">Create Blog</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('paymentModal')">&times;</span>
+            <h2>Choose Your Plan</h2>
+            <div class="plans">
+                <div class="plan">
+                    <h3>Basic</h3>
+                    <p class="price">$9.99/month</p>
+                    <ul>
+                        <li>Create up to 5 blogs</li>
+                        <li>Basic analytics</li>
+                        <li>Standard support</li>
+                    </ul>
+                    <button onclick="selectPlan('basic')">Select Plan</button>
+                </div>
+                <div class="plan featured">
+                    <h3>Pro</h3>
+                    <p class="price">$19.99/month</p>
+                    <ul>
+                        <li>Unlimited blogs</li>
+                        <li>Advanced analytics</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <button onclick="selectPlan('pro')">Select Plan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comment Modal -->
+    <div id="commentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('commentModal')">&times;</span>
+            <h2>Comments</h2>
+            <div id="commentsList"></div>
+            <form id="commentForm">
+                <div class="form-group">
+                    <textarea id="commentText" placeholder="Write a comment..." required></textarea>
+                </div>
+                <button type="submit">Add Comment</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="js/blog.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html> 

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Travel Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <div class="profile-container">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="cover-photo">
+                <img src="https://source.unsplash.com/1600x400/?travel,landscape" alt="Cover Photo">
+            </div>
+            <div class="profile-info">
+                <div class="profile-avatar">
+                    <img id="profileImage" src="images/default-avatar.png" alt="Profile">
+                    <div class="status-badge" id="statusBadge"></div>
+                </div>
+                <div class="profile-details">
+                    <h1 id="profileName">User Name</h1>
+                    <p id="profileEmail">user@example.com</p>
+                    <p class="status" id="profileStatus">Status: Normal</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Stats Cards -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Blogs</h3>
+                        <p id="totalBlogs">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Likes</h3>
+                        <p id="totalLikes">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-comment"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Comments</h3>
+                        <p id="totalComments">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Edit Profile Section -->
+            <div class="edit-profile-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-user-edit"></i> Edit Profile</h2>
+                </div>
+                <form id="profileForm" class="profile-form">
+                    <div class="form-group">
+                        <label for="editName">
+                            <i class="fas fa-user"></i> Full Name
+                        </label>
+                        <input type="text" id="editName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editEmail">
+                            <i class="fas fa-envelope"></i> Email
+                        </label>
+                        <input type="email" id="editEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editPassword">
+                            <i class="fas fa-lock"></i> New Password
+                        </label>
+                        <input type="password" id="editPassword" placeholder="Leave blank to keep current password">
+                    </div>
+                    <div class="form-group">
+                        <label for="editImage">
+                            <i class="fas fa-image"></i> Profile Image URL
+                        </label>
+                        <input type="url" id="editImage" placeholder="Enter image URL">
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="save-btn">
+                            <i class="fas fa-save"></i> Save Changes
+                        </button>
+                        <button type="button" onclick="window.history.back()" class="back-btn">
+                            <i class="fas fa-arrow-left"></i> Go Back
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/profile.js"></script>
+</body>
+</html> 
