@@ -130,26 +130,6 @@ Travel Blog is a dynamic web platform that connects travel enthusiasts and blogg
 - Real-time updates
 - Image upload support
 
-## 🚀 Getting Started
-
-1. Clone the repository
-
-```bash
-git clone https://github.com/jamalihassan0307/travel-blogging-platfoam.git
-```
-
-2. Open with Live Server
-
-```bash
-# Use VS Code Live Server extension or your preferred method
-```
-
-3. Configure API
-
-```bash
-# Update API_BASE_URL in js/services/api.js with your MockAPI endpoint
-```
-
 ## 👨‍💻 Developer Contact
 
 Feel free to reach out for questions or collaboration:
