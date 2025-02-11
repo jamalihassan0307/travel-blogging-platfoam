@@ -25,7 +25,7 @@
   "password": "1234",
   "name": "admin",
   "role": "Admin (roleId: 1)",
-  "status": "approved"
+  "status": "approved",
 }
 ```
 
@@ -37,7 +37,7 @@
   "password": "1234",
   "name": "blogger",
   "role": "Blogger (roleId: 2)",
-  "status": "normal"
+  "status": "normal",
 }
 ```
 
@@ -49,7 +49,7 @@
   "password": "1234",
   "name": "new",
   "role": "User (roleId: 2)",
-  "status": "normal"
+  "status": "normal",
 }
 ```
 
